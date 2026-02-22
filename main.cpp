@@ -186,6 +186,11 @@ public:
                 continue;
             }
 
+            if (player_board[x][y] != '-') {
+                cout << "Cell already revealed!\n";
+                continue;
+            }
+
             if (current_move_index == 0) {
                 place_mines(x, y);
             }
