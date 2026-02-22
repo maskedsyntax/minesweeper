@@ -1,6 +1,6 @@
 # Minesweeper
 
-A C++ implementation of the classic Minesweeper game, where you test your skills to avoid hidden mines! Choose a difficulty level, reveal cells, and win if you can avoid all the mines.
+A modern C++ implementation of the classic Minesweeper game. Test your logic by navigating a hidden minefield using a command-line interface with color support and robust gameplay mechanics.
 
 ## Features
 - **Difficulty Levels:**
@@ -9,13 +9,22 @@ A C++ implementation of the classic Minesweeper game, where you test your skills
   - Advanced: 24x24 grid with 99 mines.
 
 - **Gameplay Mechanics:**
-  - **Random Mine Placement:** Every new game offers a fresh minefield layout.
-  - **Recursive Reveal:** Clear empty cells and reveal neighboring cells automatically.
-  - **Cheat Mode:** Option to reveal all mines for a peek behind the scenes.
+  - **First Move Safety:** Your first move is guaranteed to be safe; mines are placed after your first reveal.
+  - **Flagging System:** Mark suspected mines to keep track of the board.
+  - **Recursive Reveal:** Clearing an empty cell automatically reveals all adjacent safe cells.
+  - **Visual Feedback:** ANSI colors highlight different numbers and mine locations for better readability.
+  - **Play Again Loop:** Start a new game immediately after finishing a session.
 
 ## How to Play
-1. **Select Difficulty Level:** Choose between Beginner, Intermediate, and Advanced.
-2. **Enter Your Move:** Provide row and column indices to reveal a cell.
-3. **Win or Lose:** Successfully reveal all safe cells to win, or hit a mine to lose.
+1. **Compile the Game:**
+   Use a C++11 compatible compiler:
+   ```bash
+   g++ -std=c++11 main.cpp -o minesweeper
+   ```
+2. **Select Difficulty:** Choose between Beginner (0), Intermediate (1), or Advanced (2).
+3. **Enter Commands:**
+   - To reveal a cell: `r row column` (e.g., `r 3 4`)
+   - To flag/unflag a cell: `f row column` (e.g., `f 3 4`)
+4. **Win or Lose:** Successfully reveal all safe cells to win, or hit a mine to lose.
 
 Challenge yourself to navigate the minefield and win the game!
